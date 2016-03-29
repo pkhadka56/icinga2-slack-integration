@@ -32,3 +32,7 @@ object UserGroup "oncall" {
   display_name = "oncall"
 }
 ```
+
+originally from:
+https://github.com/jjethwa/icinga2-slack-notification
+https://git.gmu.edu/nander13/icinga2-slack

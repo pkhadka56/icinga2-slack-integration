@@ -1,2 +1,34 @@
-# icinga2-slack-integration
-This is for my personal use. I have copied from different sources. If you think you can make use of it use it. All rights reserved to those who owns it.
+# icinga2-slack-notification
+
+###Your setup may vary, so some of the config files included here may need to be tweaked
+
+1. Set up a new incoming webhook for your team in slack
+2. Add slack-service-notification.sh to /etc/icinga2/scripts directory
+3. Add the contents of slack-service-notification.conf to your templates.conf
+4. Add the contents of slack-service-notification-command.conf to your commands.conf 
+5. Add an entry to your notifications.conf
+```
+apply Notification "slack" to Service {
+  import "slack-service-notification"
+  user_groups = [ "oncall" ]
+  interval = 30m
+  assign where host.vars.notification.mail
+}
+```
+6. Set up a new user and usergroup
+```
+object User "oncall_alerts" {
+  import "generic-user"
+
+  display_name = "oncall alerts"
+  groups = [ "oncall" ]
+  states = [ OK, Warning, Critical ]
+  types = [ Problem, Recovery ]
+
+  email = "my@email.com"
+}
+
+object UserGroup "oncall" {
+  display_name = "oncall"
+}
+```

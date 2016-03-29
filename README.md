@@ -1,4 +1,4 @@
-# icinga2-slack-notification
+# icinga2-slack-integration
 
 ###Your setup may vary, so some of the config files included here may need to be tweaked
 

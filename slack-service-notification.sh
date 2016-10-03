@@ -68,5 +68,5 @@ $comment
 PAYLOAD
 `
 
-curl -X POST --data-urlencode "$payload" https://hooks.slack.com/services/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
+curl -X POST --data-urlencode "$payload" https://hooks.slack.com/services/T08TKUYIAV0/B0VUIGo863/aElOIUASUDOIUSDQlv1BaXKBE
 #/usr/bin/printf "%b" "$template" | mail -s "$NOTIFICATIONTYPE - $HOSTDISPLAYNAME - $SERVICEDISPLAYNAME is $SERVICESTATE" $USEREMAIL

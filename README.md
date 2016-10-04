@@ -32,6 +32,8 @@ object UserGroup "oncall" {
   display_name = "oncall"
 }
 ```
+7. DO NOT FORGOT TO ADD YOUR OWN SLACK CHANNEL AND HOOKS IN slack-service-notification.sh
+8. CHEERS!!
 
 originally from:
 
